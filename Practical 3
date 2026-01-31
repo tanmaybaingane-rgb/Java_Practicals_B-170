@@ -1,0 +1,128 @@
+Problem Statement 1
+public class Result {
+
+    String studentName;
+    int subject_marks;
+    double percentage;
+
+    void calculateResult() {
+        percentage = subject_marks;
+    }
+
+    void displayGrade() {
+        System.out.println("Student Name: " + studentName);
+        System.out.println("Percentage: " + percentage + "%");
+
+        if (percentage >= 75) {
+            System.out.println("Grade: A");
+        } else if (percentage >= 60) {
+            System.out.println("Grade: B");
+        } else if (percentage >= 50) {
+            System.out.println("Grade: C");
+        } else {
+            System.out.println("Grade: Fail");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Result r1 = new Result();
+        r1.studentName = "Tanmay";
+        r1.subject_marks = 100;
+
+        r1.calculateResult();
+        r1.displayGrade();
+    }
+}
+
+Problem Statement 2
+import java.util.Scanner;
+
+public class pract3 {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = scanner.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = scanner.nextInt();
+
+        System.out.println("Enter operation to perform:");
+        System.out.println("1. ADDITION");
+        System.out.println("2. SUBTRACTION");
+        System.out.println("3. MULTIPLICATION");
+        System.out.println("4. DIVISION");
+
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                System.out.println("Addition is: " + (a + b));
+                break;
+
+            case 2:
+                System.out.println("Subtraction is: " + (a - b));
+                break;
+
+            case 3:
+                System.out.println("Multiplication is: " + (a * b));
+                break;
+
+            case 4:
+                System.out.println("Division is: " + (a / b));
+                break;
+
+            default:
+                System.out.println("Invalid choice");
+        }
+
+        scanner.close();
+    }
+}
+
+Problem Statement 3
+import java.util.Scanner;
+
+public class fibonacci {
+
+    static Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        System.out.print("Enter the number: ");
+        int n = sc.nextInt();
+
+        int term1 = 0;
+        int term2 = 1;
+        int next_term = 0;
+
+        System.out.print("The Fibonacci Sequence till " + n + " is: ");
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print(next_term + ", ");
+
+            term1 = term2;
+            term2 = next_term;
+            next_term = term1 + term2;
+        }
+
+        sc.close();
+    }
+}
+
+Problem Statement 4
+class star {
+    public static void main(String[] args) {
+        int rows = 4;
+
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
