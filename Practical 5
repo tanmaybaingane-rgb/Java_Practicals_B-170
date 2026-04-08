@@ -1,0 +1,99 @@
+problem statement 1
+class Book {
+    int bookId;
+    String title, author;
+
+    void getBookDetails(int id, String t, String a) {
+        bookId = id;
+        title = t;
+        author = a;
+    }
+}
+
+class IssuedBook extends Book {
+    String issueDate, returnDate;
+
+    void getIssuedDetails(String issue, String ret) {
+        issueDate = issue;
+        returnDate = ret;
+    }
+
+    void display() {
+        System.out.println("Book ID: " + bookId);
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Issue Date: " + issueDate);
+        System.out.println("Return Date: " + returnDate);
+    }
+}
+
+public class LibraryDemo {
+    public static void main(String[] args) {
+        IssuedBook b = new IssuedBook();
+        b.getBookDetails(101, "Java Basics", "James Gosling");
+        b.getIssuedDetails("01-04-2026", "10-04-2026");
+        b.display();
+    }
+}
+
+problem statement 2
+class Product {
+    int productId;
+    String productName;
+    double price;
+
+    void getProduct(int id, String name, double p) {
+        productId = id;
+        productName = name;
+        price = p;
+    }
+}
+
+class Electronics extends Product {
+    int warrantyPeriod;
+
+    void getElectronics(int w) {
+        warrantyPeriod = w;
+    }
+
+    void display() {
+        System.out.println("\nElectronics Product:");
+        System.out.println("ID: " + productId);
+        System.out.println("Name: " + productName);
+        System.out.println("Price: " + price);
+        System.out.println("Warranty: " + warrantyPeriod + " years");
+    }
+}
+
+class Clothing extends Product {
+    String size, fabricType;
+
+    void getClothing(String s, String f) {
+        size = s;
+        fabricType = f;
+    }
+
+    void display() {
+        System.out.println("\nClothing Product:");
+        System.out.println("ID: " + productId);
+        System.out.println("Name: " + productName);
+        System.out.println("Price: " + price);
+        System.out.println("Size: " + size);
+        System.out.println("Fabric: " + fabricType);
+    }
+}
+
+public class ShoppingDemo {
+    public static void main(String[] args) {
+
+        Electronics e = new Electronics();
+        e.getProduct(201, "Laptop", 55000);
+        e.getElectronics(2);
+        e.display();
+
+        Clothing c = new Clothing();
+        c.getProduct(301, "T-Shirt", 1200);
+        c.getClothing("M", "Cotton");
+        c.display();
+    }
+}
