@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class ExceptionDemo {
+    public static void main(String[] args) {
+        int a, b, result;
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            System.out.print("Enter first number: ");
+            a = sc.nextInt();
+
+            System.out.print("Enter second number: ");
+            b = sc.nextInt();
+
+            result = a / b; // may cause ArithmeticException
+            System.out.println("Result: " + result);
+        } 
+        catch (ArithmeticException e) {
+            System.out.println("Error: Cannot divide by zero!");
+        } 
+        finally {
+            System.out.println("Execution completed (finally block executed).");
+            sc.close();
+        }
+    }
+}
